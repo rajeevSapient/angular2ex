@@ -7,10 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
-  hobby: string;
-
-  onChange(evt) {
-    this.hobby = evt.target.value;
-  }
-
 }
