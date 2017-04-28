@@ -4,10 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { BooddashboardComponent } from './booddashboard/booddashboard.component';
+import { BookleafComponent } from './bookleaf/bookleaf.component';
+import { BookformComponent } from './bookform/bookform.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    BooddashboardComponent,
+    BookleafComponent,
+    BookformComponent
   ],
   imports: [
     BrowserModule,
