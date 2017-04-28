@@ -6,15 +6,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent implements OnInit {
-  title = "Hello world";
-  disabled = false;
-  btnlabel = "not disabled";
 
-  ngOnInit() {
-    setTimeout(() => {
-      this.title = "new hello world";
-      this.btnlabel = "disabled now";
-      this.disabled = true;
-    }, 2000);
+  hobbies: string[] = [];
+
+  constructor() { }
+
+  ngOnInit() { }
+
+  onSave(hobby) {
+    this.hobbies.push(hobby);
+  }
+
+  onRemove(index) {
+    this.hobbies.splice(index, 1);
   }
 }

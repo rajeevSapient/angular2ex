@@ -1,14 +1,21 @@
 <div class="container">
-
   <div class="row">
-    <div class="col-md-12">
-      <span>{{title}}</span>
+    <div class="col-md-6">
+      <div class="form-group">
+        <label for="">Enter Hobby</label>
+        <input type="text" class="form-control" #hobby />
+      </div>
+      <div class="form-group">
+        <button class="btn btn-primary" (click)="onSave(hobby.value)">Add Hobby</button>
+      </div>
     </div>
   </div>
-  <div class="row">
-    <div class="col-md-12">
-      <button class="btn btn-primary" [disabled]="disabled">{{btnlabel | }</button>
+  <div class="row" *ngIf="hobbies.length > 0">
+    <div class="col-md-6">
+      <p> All hobbies below: </p>
+      <ul *ngFor="let hobby of hobbies; let i = index">
+        <li>{{hobby}} <a href="#" (click)="onRemove(i)"> X </a></li>
+      </ul>
     </div>
   </div>
-
 </div>
