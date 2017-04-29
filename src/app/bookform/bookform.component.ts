@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { FormGroup, FormControl, FormBuilder } from '@angular/forms';
+import { FormGroup, FormControl, FormBuilder, Validators } from '@angular/forms';
 
 
 @Component({
@@ -23,6 +23,8 @@ export class BookformComponent implements OnInit {
 
   bookform: FormGroup;
 
+  formnotvalid = false;
+
   constructor() { }
 
   getRandomImage() {
@@ -40,10 +42,13 @@ export class BookformComponent implements OnInit {
 
   ngOnInit() {
     this.bookform = new FormGroup({
-      "title": new FormControl(null),
-      "author": new FormControl(),
-      "date": new FormControl(null),
-      "keywords": new FormControl(null)
+      'bookdata': new FormGroup({
+        'title': new FormControl(null, [Validators.required]),
+        'author': new FormControl(null, [Validators.required]),
+        'date': new FormControl(null)
+      }),
+      'authoremail': new FormControl(null, [Validators.required, Validators.email]),
+      'keywords': new FormControl(null)
     });
   }
 
