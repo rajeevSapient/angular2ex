@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-booddashboard',
@@ -6,9 +6,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./booddashboard.component.css']
 })
 export class BooddashboardComponent implements OnInit {
-
+  @Input() books = [];
   constructor() { }
-
   ngOnInit() {
   }
 

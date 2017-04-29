@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
   selector: 'app-bookleaf',
@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BookleafComponent implements OnInit {
 
+  @Input() books = [];
+
   constructor() { }
+
+  onRemove(index) {
+    this.books.splice(index, 1);
+  }
 
   ngOnInit() {
   }
