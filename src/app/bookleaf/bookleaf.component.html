@@ -4,10 +4,11 @@
   </div>
   <div class="col-md-8">
     <button type="button" class="close" (click)="onRemove(i)" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <p>{{book.title}}</p>
-    <p>{{book.author}}</p>
-    <p>{{book.date}}</p>
+    <p>{{book.bookdata.title | uppercase}}</p>
+    <p>{{book.bookdata.author}}</p>
+    <p>{{book.bookdata.date | date:full}}</p>
+    <p>{{book.authoremail | lowercase}}</p>
     <p>{{book.keywords}}</p>
-    <button type="button" class="close"><span class="glyphicon glyphicon-pencil"></span></button>
+    <!--<button type="button" class="close"><span class="glyphicon glyphicon-pencil"></span></button>-->
   </div>
 </div>

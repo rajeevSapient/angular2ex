@@ -26,7 +26,10 @@
         <div class="form-group">
           <label for="authore">Author email:</label>
           <input type="email" id="authore" class="form-control" formControlName="authoremail">
-          <span *ngIf="!bookform.get('authoremail').valid && bookform.get('authoremail').touched" class="help-block">Please enter book's author email!</span>
+          <span *ngIf="!bookform.get('authoremail').valid && bookform.get('authoremail').errors.required && bookform.get('authoremail').touched"
+            class="help-block">Dude! field is required!</span>
+          <span *ngIf="!bookform.get('authoremail').valid && bookform.get('authoremail').errors.email && bookform.get('authoremail').touched"
+            class="help-block">wrong email format!</span>
         </div>
         <div class="form-group">
           <label for="keyword">Keywords:</label>

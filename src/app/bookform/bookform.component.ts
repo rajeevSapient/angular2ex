@@ -13,7 +13,10 @@ export class BookformComponent implements OnInit {
 
   forbiddenTitle = ['html', 'css'];
 
-  books: { title: string, author: string, releasedate: string, keyword?: string, imgsrc: string }[] = [];
+  bookdata: { title: string, author: string, releasedate: string };
+
+  books: { bookdata, keyword?: string, imgsrc: string }[] = [];
+
   images = [
     '../assets/img/js1.png',
     '../assets/img/js2.png',
@@ -37,9 +40,9 @@ export class BookformComponent implements OnInit {
     let values = this.bookform.value;
     values.imgsrc = this.getRandomImage();
     this.books.push(values);
-    // this.bookform.reset();
+    this.bookform.reset();
     // this.newbook.emit(this.books);
-    console.log(this.bookform.value);
+    console.log(this.bookform);
   }
 
   ngOnInit() {
