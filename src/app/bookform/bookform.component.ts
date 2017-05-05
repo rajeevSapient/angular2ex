@@ -39,7 +39,7 @@ export class BookformComponent implements OnInit {
     this.books.push(values);
     // this.bookform.reset();
     // this.newbook.emit(this.books);
-    console.log(this.bookform);
+    console.log(this.bookform.value);
   }
 
   ngOnInit() {
