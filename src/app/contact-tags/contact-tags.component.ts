@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, EventEmitter, Output } from '@angular/core';
 
 @Component({
   selector: 'app-contact-tags',
@@ -7,9 +7,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ContactTagsComponent implements OnInit {
 
+  @Output() tagAdd = new EventEmitter();
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  addTag($event, tag) {
+    $event.target.disabled = true;
+    this.tagAdd.emit(tag);
   }
 
 }
