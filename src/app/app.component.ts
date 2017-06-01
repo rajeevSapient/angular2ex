@@ -7,4 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
 
+
+  onNewContact(data) {
+
+    console.log("data = ", data);
+
+  }
+
 }

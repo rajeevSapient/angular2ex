@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+
+import { Contact } from '../contact.model';
 
 @Component({
   selector: 'app-contact-form',
@@ -10,29 +12,30 @@ export class ContactFormComponent implements OnInit {
 
   contactform: FormGroup;
 
-  constructor(private formBuilder: FormBuilder) { }
+  @Output() newContact = new EventEmitter<Contact>();
+
+  constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
 
-    this.contactform = this.formBuilder.group({
-
+    this.contactform = this.fb.group({
       name: ['', Validators.required],
       email: ['', Validators.email],
       jobtitle: '',
       location: '',
-      social: this.formBuilder.group({
+      social: this.fb.group({
         facebook: '',
         github: '',
         twitter: '',
         linkedin: ''
       })
-
     });
 
   }
 
-  onNewContact() {
-    console.log(this.contactform);
+  onSubmit() {
+    this.newContact.emit(this.contactform.value);
+    console.log(this.contactform.value);
   }
 
 }
