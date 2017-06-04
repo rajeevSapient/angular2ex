@@ -1,8 +1,10 @@
+<hr/>
 <div class="row">
   <div class="col-md-12">
     <ul class="list-group">
-      <li class="list-group-item" *ngFor="let contact of contacts; let i = index">
+      <li class="list-group-item" *ngFor="let contact of contacts | filter:id">
         <span>{{contact.name}}</span>
+        <span *ngFor="let tags of contact.tags">{{tags}} </span>
       </li>
     </ul>
   </div>

@@ -6,21 +6,22 @@ import { RouterModule } from '@angular/router';
 
 import { AppComponent } from './app.component';
 import { ContactHeaderComponent } from './contact-header/contact-header.component';
-import { ContactTagsComponent } from './contact-tags/contact-tags.component';
 import { ContactNavComponent } from './contact-nav/contact-nav.component';
 import { ContactFormModule } from './contact-form/contact-form.module';
 import { appRoutes } from './app.route';
 import { CotactItemComponent } from './cotact-item/cotact-item.component';
 import { CotactListComponent } from './cotact-list/cotact-list.component';
+import { ContactService } from './contact.service';
+import { FilterPipe } from './filter.pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     ContactHeaderComponent,
-    ContactTagsComponent,
     ContactNavComponent,
     CotactItemComponent,
-    CotactListComponent
+    CotactListComponent,
+    FilterPipe
   ],
   imports: [
     BrowserModule,
@@ -29,7 +30,11 @@ import { CotactListComponent } from './cotact-list/cotact-list.component';
     ContactFormModule,
     RouterModule.forRoot(appRoutes)
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [
+    ContactService
+  ],
+  bootstrap: [
+    AppComponent
+  ]
 })
 export class AppModule { }

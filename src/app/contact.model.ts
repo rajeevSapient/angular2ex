@@ -9,5 +9,5 @@ export interface Contact {
         github?: string,
         linkedin?: string
     },
-    tags: string[]
+    tags?: string[]
 }

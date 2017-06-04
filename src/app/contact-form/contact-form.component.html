@@ -1,3 +1,4 @@
+<hr/>
 <p class="text-muted">* fields are required!</p>
 <form class="form-group" [formGroup]="contactform">
   <hr/>
@@ -27,5 +28,9 @@
       <button class="btn btn-primary pull-right" type="button" (click)="onSubmit()" [disabled]="contactform.invalid">Create contact</button>
 
     </div>
+
+    <hr/>
+    <app-contact-tags (tagAdd)="onTagClicked($event)"></app-contact-tags>
+
   </div>
 </form>
